@@ -5,7 +5,7 @@ package creational.singleton;
  */
 public class LazyInitializationExample {
 
-  private static LazyInitializationExample instance;
+  private static volatile LazyInitializationExample instance;
 
   private LazyInitializationExample() {
 

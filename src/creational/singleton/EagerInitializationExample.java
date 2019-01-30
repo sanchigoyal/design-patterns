@@ -5,7 +5,7 @@ package creational.singleton;
  */
 public class EagerInitializationExample {
 
-  private static EagerInitializationExample instance = new EagerInitializationExample();
+  private static volatile EagerInitializationExample instance = new EagerInitializationExample();
 
   private EagerInitializationExample() {
     System.out.println("Constructor was called to create the instance");

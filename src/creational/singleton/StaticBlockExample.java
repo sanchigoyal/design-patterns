@@ -5,15 +5,16 @@ package creational.singleton;
  */
 public class StaticBlockExample {
 
-  private static StaticBlockExample instance;
+  private static final StaticBlockExample INSTANCE;
 
   private StaticBlockExample() {
-    System.out.println("Constructor was called to create the instance");
+    System.out.println("Constructor was called to create the INSTANCE");
   }
 
+  /* This block of code is called even before the constructor is called */
   static {
     try {
-      instance = new StaticBlockExample();
+      INSTANCE = new StaticBlockExample();
     } catch (Exception e) {
       // do something
       throw new RuntimeException();
@@ -25,7 +26,7 @@ public class StaticBlockExample {
    */
   public static StaticBlockExample getInstance() {
     System.out.println("Requesting singleton instance");
-    return instance;
+    return INSTANCE;
   }
 
 }
